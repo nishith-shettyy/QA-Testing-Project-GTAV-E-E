@@ -1,0 +1,168 @@
+ID,Summary,Pre-conditions,Steps,Status,Actual Result,Expected Result,Post-contition
+TC-GTAV-E&E-001,"Replay ""I Fought the Law"" mission - Character switch after cutscene","Mission replay unlocked ""I Fought the Law""","1. Open pause menu
+2. Navigate to Replay Mission
+3. Select ""I Fought the Law""
+4. Start Mission and progress through chase sequence
+5. Observe character after cutscene ends",Fail,Game should switch control from Franklin to Michael and spawn player in correct vehicle and location,"Franklin remains active instead of switching to Michael, appears on police bike and later spawns in incorrect locations such as under the bridge",Game remains in correct character state and does not affect gameplay flow
+TC-GTAV-E&E-002,“Father/Son” mission - Use Explosives after Jimmy is rescued,Mission unlocked “Father/Son”,"1. Start mission “Father/Son”
+2. Progress until Franklin rescues Jimmy from the boat
+3. Ensure Jimmy is seated inside the vehicle
+4. Trigger an explosion nearby",Fail,"Jimmy is forcefully ejected from the vehicle, and character is launched unusually high into the air","Jimmy remains seated inside the vehicle,
+Explosion should not cause abnormal ejection or exaggerated physics",Mission progresses to next state or resets based on gameplay outcome
+TC-GTAV-E&E-003,Free Roam - Vehicle collision should cause realistic damage and player response,"Player is in free roam mode,
+Player has access to a standard vehicles","1. Enter a vehicle.
+2. Accelerate to high speed.
+3. Crash the vehicle into a solid object
+4. Observe vehicle damage and player reaction.
+5. Repeat collisions multiple times.",Pass,"Vehicle shows progressive visual damage like dents, broken parts, physics behave realistically, and player character reacts appropriately to impact",Vehicle damage system should reflect realistic collision physics with visible damage and appropriate player response after impact,"Vehicle remains usable or becomes severely damaged depending on impact, player retains control or exits vehicle if destroyed"
+TC-GTAV-E&E-004,Free Roam -Trigger wanted level and verify police AI response and escalation,"Player is in free roam mode,
+No active wanted level","1. Perform a minor crime
+2. Observe 1-star wanted level activation
+3. Continue committing crimes to increase wanted level
+4. Attempt to escape police line of sight
+5. Hide until wanted level drops",In Progress,,Wanted system should dynamically scale police response and allow player to evade by breaking line of sight and hiding,
+TC-GTAV-E&E-005,Verify that all explosive weapons can destroy trailers in Friends Reunited mission,"Player can access mission Friends Reunited,
+Player has access to multiple explosive weapons","1. Start mission Friends Reunited
+2. Progress until objective: Destroy the trailers
+3. Attempt to destroy trailers using all explosive weapons
+4. Observe whether trailers explode",Fail,"Trailers do not take damage or explode when using Railgun, Proximity Mines, Tank, Buzzard missiles, or Jet missiles, 
+Trailers only explode when using Grenades, Grenade Launcher, RPG, or Sticky Bombs","Trailers should be destructible by all high damage explosive weapons consistently,
+All explosive weapons should trigger trailer destruction",Mission objective state is updated based on trailer destruction
+TC-GTAO-E&E-001,Validate wanted level behavior during “Pizza This” odd job mission when player commits crimes,"Player is in an active online public or private session,
+Player has access to and starts the “Pizza This” Odd Job mission,
+No active wanted level before starting the mission","1. Start the “Pizza This” odd job mission
+2. Begin delivering pizzas
+3. During the mission, commit crimes
+4. Observe wanted level behavior",Fail,"Wanted level is not triggered during the mission despite committing crimes,
+Wanted system resumes normal behavior after mission completion or failure","Wanted level should trigger when player commits crimes during the mission,
+Wanted system should behave consistently during and after mission","Mission ends with success or failure,
+Wanted system functions normally after mission"
+TC-GTAO-E&E-003,Verify vehicle paint behavior when applying Crew Color over an existing Chameleon Paint in GTA Online,"Player owns a vehicle,
+Vehicle already has a Chameleon paint applied,
+Player is a member of a Crew with a custom Crew Color,
+Access to Los Santos Customs or Auto Shop","1. Take the vehicle with Chameleon Paint to any Mod Shop
+2. Navigate to Respray and then Primary Color
+3. Select Crew Color and Confirm purchase
+4. Exit mod shop
+5. Switch to story mode and return back to online session for the crew color texture to appear on the vehicle  
+6. Call in the vehicle and check the paint",Fail,"Crew Color appears selected in UI,
+However, the vehicle does not retain Crew Color visually,
+Chameleon Paint effect remains or overrides the applied Crew Color","Crew Color should be visibly applied and persist on the vehicle,
+Vehicle appearance should match the selected Crew Color consistently,
+UI selection and actual vehicle paint should be in sync","Vehicle remains with Chameleon Paint (Crew Color not applied visually), causing mismatch between selected option and actual appearance"
+TC-GTAO-E&E-004,Verify character appearance when applying outfit components after purchasing a heist outfit,"Player owns or has access to the Heist outfits,
+Player is inside a clothing store or wardrobe interaction point","1. Open Interaction Menu or access a clothing store wardrobe
+2. Navigate to Outfits
+3. Purchase the outfit and Equip the purchased outfit
+4. Navigate to Tops and then select any Tops
+5. Observe the character model, specifically arms and upper body",Fail,"Character’s arms become invisible after applying “No Top” with the selected refuse collectors (the pickup) outfit combination,
+Visual inconsistency observed in the character model","Character model updates correctly,
+Arms and upper body remain visible and properly rendered,
+No visual glitches occur when combining outfit components","Outfit combination (Refuse Collectors + Overcoat Blazer - No Top category) remains applied to the character,
+Visual state of the character reflects the result of the customization"
+TC-GTAO-E&E-005,Verify persistence and ownership integrity of SecuroServ spawned vehicle across session transition,"Player is registered as a CEO via SecuroServ,
+Player has access to CEO vehicles,
+Player is currently in a populated Public Session,
+No active mission running","1. Register as CEO using SecuroServ
+2. Spawn a CEO vehicle
+3. Enter the vehicle and move to an active area, and ensure session sync with other players
+4. While inside the vehicle, pause the game
+5. Navigate to Online, Find New Session, Invite Only Session
+6. Accept transition while seated in CEO vehicle
+7. After loading into new session, observe player state and vehicle presence",Pass,"Session transition completed successfully without errors,
+Player spawned correctly in Invite Only session,
+Previously spawned CEO vehicle did not persist into new session,
+No duplicate or ghost vehicles observed,
+Player was able to spawn a new CEO vehicle normally","Session transition completes without desync or crash,
+Player spawns correctly in new session,
+Previously spawned CEO vehicle is not improperly persisted across sessions,
+No duplication of CEO vehicles occurs,
+Player can spawn a fresh CEO vehicle normally","Player remains registered as CEO,
+No unintended vehicle persistence or duplication exists"
+TC-GTAO-E&E-006,Verify payout consistency when a business sell mission completes during session transition,"Player owns an active business with sellable stock
+Player is in an active sell mission (delivery phase)
+Stable connection before transition","1. Start a business sell mission
+2. Complete final delivery objective
+3. Immediately trigger session change (Find New Session) during completion moment
+4. Load into new session
+5. Check player balance and business stock",Pass,"Reward credited once correctly
+Stock deducted as expected
+No duplication or loss observed","Reward is granted exactly once
+Stock is deducted correctly
+No duplicate payout or rollback occur","Economy remains consistent
+Player progression saved correctly"
+TC-GTAO-E&E-007,Verify personal vehicle ownership and state consistency when player dies during active delivery interaction,"Player is logged into Grand Theft Auto Online
+Player has an active personal vehicle (insured)
+Player is engaged in a delivery-type interaction (e.g., sourcing/sell prep)
+Vehicle is currently in use","1. Begin delivery interaction using personal vehicle
+2. Destroy player character (e.g., explosion) while vehicle remains in world
+3. Respawn player
+4. Request personal vehicle via interaction menu",Pass,"Vehicle ownership remained intact after respawn
+Vehicle was retrievable via normal systems
+No duplication, loss, or invalid state observed","Vehicle ownership remains correctly assigned to player
+Vehicle is either retrievable or returned to storage per design
+No duplication or loss of vehicle occurs","Player retains full access to personal vehicle
+Vehicle system remains consistent and exploit-free"
+TC-GTAO-E&E-008,"Verify consistency of business transaction, player state, and reward allocation when delivery completion overlaps with player death and session rejoin","Player owns an active business with sellable stock
+Player is in a Public Session with other players
+Sell mission is initiated and in final delivery phase
+Player has sufficient health/ammo to proceed","1. Start sell mission and progress to final delivery
+2. Complete partial deliveries (ensure progress is registered)
+3. Initiate final delivery
+4. At completion moment, trigger player death (explosion/damage)
+5. During respawn/loading, initiate session change
+6. Rejoin and verify balance, stock, and mission state",Pass,"Mission completion resolved correctly despite death and transition overlap
+Reward credited once based on completed deliveries
+Remaining stock updated accurately without duplication
+No inconsistent mission state or UI issues observed","Transaction is handled atomically (either fully completed or correctly failed)
+Reward is granted only once based on final delivery state
+Stock is deducted accurately (no duplication or rollback abuse)
+Player death does not create inconsistent mission state
+Session transition does not duplicate rewards or reset progress incorrectly
+No stuck mission state or UI inconsistency","Business reflects correct stock after transaction
+Player balance aligns with completed delivery value
+No residual mission state or exploit opportunity exists"
+TC-GTAO-E&E-009,Verify consistency of reward distribution and mission state when session host disconnects during mission completion in a co-op activity,"Minimum 2 players in same organization/MC
+Co-op mission active
+One player is session host
+Mission is at final objective stage","1. Start a co-op mission and progress to final objective
+2. Ensure both players actively contribute (shared progress state)
+3. Complete the final objective
+4. At completion moment, force host disconnect (network off/quit)
+5. Remaining player continues into post-mission state/session migration
+6. Verify reward, mission completion, and state for remaining player",Pass,"Remaining player received correct reward once
+Mission marked as completed successfully
+No duplication or payout inconsistency observed
+Session migration handled without errors","Mission completion resolves correctly for remaining player
+Reward is granted once per eligible player
+No duplication or loss of payout occurs
+Session migration does not corrupt mission state
+Disconnected host does not cause rollback or duplicate rewards","Player progression and earnings remain accurate
+No residual or stuck mission state"
+TC-GTAV/O-E&E-001,Verify player health behavior when transitioning from GTA Online session to Story Mode after using a personal favorite motorcycle,"Player can switch between GTA Online and Grand Theft Auto V Story Mode,
+Player owns or has a ""favorite motorcycle"" in GTA Online,
+Player health is not already at full before starting validation","1. Call in the favorite motorcycle using interaction menu / MC menu
+2. Mount the motorcycle
+3. Observe player health regeneration behavior while seated
+4. Stay on the same motorcycle
+5. Switch to Story Mode (Franklin / Michael / Trevor)
+6. Reduce player health (eg: fall damage, NPC attack, etc.)
+7. Observe health regeneration behavior after switching",Fail,"Regeneration persists even without being on a vehicle on Story Mode,
+Effect continues across all Story Mode characters,
+Effect remains active until game restart or loading a different save file","Health regeneration should follow Story Mode mechanics only,
+No Online specific effects should persist after switching modes","Player is in Story Mode after executing the test steps,
+Player health state reflects the result of the executed scenario"
+TC-GTAV/O-E&E-002,Verify explosion damage propagation when explosives detonate near environmental corners and obstacles,"Player has access to explosives,
+Player is located in an area with solid structures (eg: buildings, walls with corners)","1. Navigate to a location with a clear wall corner
+2. Place one or more sticky bombs on one side of the corner
+3. Move the player character to the next side of the corner
+4. Maintain close proximity to the corner within expected blast radius
+5. Detonate the explosive
+6. Observe player damage and environmental impact",Fail,"Player does not receive any damage from the explosion when positioned around the corner,
+Explosion effect does not appear to propagate beyond the obstructing surface","Explosion damage should propagate realistically around corners within a certain radius,
+Player should receive partial or full damage depending on distance and obstruction thickness","Player remains alive and unaffected despite being within expected blast radius,
+environment partially damaged"
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
